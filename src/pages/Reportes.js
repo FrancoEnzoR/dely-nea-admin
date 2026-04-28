@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+/* eslint-disable no-unused-vars */
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const API = 'https://dely-nea-backend.onrender.com';
