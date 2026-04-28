@@ -7,7 +7,7 @@ import Usuarios from './pages/Usuarios';
 import Categorias from './pages/Categorias';
 import Reportes from './pages/Reportes';
 import Asistente from './pages/Asistente';
-
+import { useState } from 'react';
 const C = {
   base: '#07080F',
   card: '#0E1020',
@@ -222,7 +222,84 @@ function Layout({ children }) {
   );
 }
 
+const ADMIN_PASSWORD = 'Budin1183JKanime2'; // Cambiá esto
+
+function LoginAdmin({ onLogin }) {
+  const [pass, setPass] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleLogin = () => {
+    if (pass === ADMIN_PASSWORD) {
+      localStorage.setItem('dely_admin', 'true');
+      onLogin();
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
+
+  return (
+    <div style={{
+      minHeight: '100vh', backgroundColor: C.base,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontFamily: "'DM Sans', sans-serif",
+    }}>
+      <div style={{
+        backgroundColor: C.card, borderRadius: 20, padding: 40,
+        border: `1px solid ${C.border}`, width: '100%', maxWidth: 380,
+        textAlign: 'center',
+      }}>
+        <div style={{
+          width: 56, height: 56, borderRadius: 16,
+          background: `linear-gradient(135deg, ${C.violet}, ${C.cyan})`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontSize: 22, fontWeight: 900, color: '#fff',
+          margin: '0 auto 20px',
+        }}>D</div>
+        <div style={{ fontSize: 22, fontWeight: 800, color: C.text, marginBottom: 6 }}>
+          Dely <span style={{ color: C.cyan }}>Nea</span>
+        </div>
+        <div style={{ fontSize: 12, color: C.muted, marginBottom: 28, letterSpacing: 2 }}>
+          PANEL ADMINISTRADOR
+        </div>
+        <input
+          type="password"
+          placeholder="Contraseña de administrador"
+          value={pass}
+          onChange={e => setPass(e.target.value)}
+          onKeyPress={e => e.key === 'Enter' && handleLogin()}
+          style={{
+            width: '100%', backgroundColor: C.cardLight,
+            border: `1px solid ${error ? C.error : C.border}`,
+            borderRadius: 12, padding: '12px 16px',
+            fontSize: 14, color: C.text, outline: 'none',
+            marginBottom: 12, boxSizing: 'border-box',
+          }}
+        />
+        {error && (
+          <div style={{ fontSize: 12, color: C.error, marginBottom: 10 }}>
+            ❌ Contraseña incorrecta
+          </div>
+        )}
+        <button onClick={handleLogin} style={{
+          width: '100%', background: `linear-gradient(135deg, ${C.violet}, ${C.cyan})`,
+          color: '#fff', border: 'none', borderRadius: 12,
+          padding: '12px', fontSize: 14, fontWeight: 700, cursor: 'pointer',
+        }}>Ingresar al panel →</button>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
+  const [logueado, setLogueado] = useState(
+    localStorage.getItem('dely_admin') === 'true'
+  );
+
+  if (!logueado) {
+    return <LoginAdmin onLogin={() => setLogueado(true)} />;
+  }
+
   return (
     <BrowserRouter>
       <Routes>
