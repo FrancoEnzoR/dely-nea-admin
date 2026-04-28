@@ -28,8 +28,6 @@ export default function Asistente() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState(null);
-  const [comercios, setComercios] = useState([]);
-  const messagesEndRef = useRef(null);
 
   useEffect(() => {
     Promise.all([
@@ -37,7 +35,6 @@ export default function Asistente() {
       fetch(`${API}/admin/comercios/stats`).then(r => r.json()),
     ]).then(([s, c]) => {
       setStats(s);
-      setComercios(c.comercios || []);
     });
   }, []);
 
