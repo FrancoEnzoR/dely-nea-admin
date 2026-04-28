@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from 'react';
 
 const API = 'https://dely-nea-backend.onrender.com';
@@ -28,14 +29,10 @@ export default function Asistente() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState(null);
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    Promise.all([
-      fetch(`${API}/admin/stats`).then(r => r.json()),
-      fetch(`${API}/admin/comercios/stats`).then(r => r.json()),
-    ]).then(([s, c]) => {
-      setStats(s);
-    });
+    fetch(`${API}/admin/stats`).then(r => r.json()).then(s => setStats(s));
   }, []);
 
   useEffect(() => {
@@ -56,7 +53,6 @@ export default function Asistente() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pregunta }),
       });
-
       const data = await response.json();
       const respuesta = data.respuesta || 'No pude procesar la respuesta.';
       setMensajes(prev => [...prev, { rol: 'asistente', texto: respuesta }]);
