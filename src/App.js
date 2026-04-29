@@ -33,7 +33,6 @@ const menuItems = [
   { path: '/reportes', label: 'Reportes', icon: '▪', emoji: '💰' },
   { path: '/asistente', label: 'Dely IA', icon: '▪', emoji: '🤖' },
 ];
-];
 
 function Sidebar() {
   const location = useLocation();
