@@ -26,10 +26,13 @@ const C = {
 const menuItems = [
   { path: '/', label: 'Dashboard', icon: '▪', emoji: '📊' },
   { path: '/comercios', label: 'Comercios', icon: '▪', emoji: '🏪' },
-  { path: '/trabajadores', label: 'Choferes y Técnicos', icon: '▪', emoji: '👷' },  { path: '/usuarios', label: 'Usuarios', icon: '▪', emoji: '👥' },
+  { path: '/trabajadores', label: 'Choferes y Técnicos', icon: '▪', emoji: '👷' },
+  { path: '/pedidos', label: 'Pedidos', icon: '▪', emoji: '📦' },
+  { path: '/usuarios', label: 'Usuarios', icon: '▪', emoji: '👥' },
   { path: '/categorias', label: 'Categorías', icon: '▪', emoji: '🏷️' },
   { path: '/reportes', label: 'Reportes', icon: '▪', emoji: '💰' },
   { path: '/asistente', label: 'Dely IA', icon: '▪', emoji: '🤖' },
+];
 ];
 
 function Sidebar() {
