@@ -26,8 +26,7 @@ const C = {
 const menuItems = [
   { path: '/', label: 'Dashboard', icon: '▪', emoji: '📊' },
   { path: '/comercios', label: 'Comercios', icon: '▪', emoji: '🏪' },
-  { path: '/tecnicos', label: 'Técnicos', icon: '▪', emoji: '🔧' },
-  { path: '/pedidos', label: 'Pedidos', icon: '▪', emoji: '📦' },
+  { path: '/trabajadores', label: 'Choferes y Técnicos', icon: '▪', emoji: '👷' },  { path: '/pedidos', label: 'Pedidos', icon: '▪', emoji: '📦' },
   { path: '/usuarios', label: 'Usuarios', icon: '▪', emoji: '👥' },
   { path: '/categorias', label: 'Categorías', icon: '▪', emoji: '🏷️' },
   { path: '/reportes', label: 'Reportes', icon: '▪', emoji: '💰' },
@@ -305,8 +304,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout><Dashboard /></Layout>} />
         <Route path="/comercios" element={<Layout><Comercios /></Layout>} />
-        <Route path="/tecnicos" element={<Layout><Tecnicos /></Layout>} />
-        <Route path="/pedidos" element={<Layout><Pedidos /></Layout>} />
+        <Route path="/trabajadores" element={<Layout><Tecnicos /></Layout>} />        <Route path="/pedidos" element={<Layout><Pedidos /></Layout>} />
         <Route path="/usuarios" element={<Layout><Usuarios /></Layout>} />
         <Route path="/categorias" element={<Layout><Categorias /></Layout>} />
         <Route path="/reportes" element={<Layout><Reportes /></Layout>} />
