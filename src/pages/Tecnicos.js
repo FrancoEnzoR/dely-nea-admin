@@ -237,7 +237,7 @@ export default function Tecnicos() {
                       border: `1px solid ${C.success}44`, borderRadius: 8,
                       padding: '8px 16px', fontSize: 12, fontWeight: 700,
                       textDecoration: 'none', display: 'inline-flex', alignItems: 'center',
-                    }}>💬 WhatsApp</button>
+                    }}>💬 WhatsApp</a>
                   </div>
                 </div>
               )}
