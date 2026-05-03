@@ -8,6 +8,7 @@ import Usuarios from './pages/Usuarios';
 import Categorias from './pages/Categorias';
 import Reportes from './pages/Reportes';
 import Asistente from './pages/Asistente';
+import Ofertas from './pages/Ofertas';
 
 const C = {
   base: '#07080F',
@@ -33,6 +34,7 @@ const menuItems = [
   { path: '/categorias', label: 'Categorías', icon: '▪', emoji: '🏷️' },
   { path: '/reportes', label: 'Reportes', icon: '▪', emoji: '💰' },
   { path: '/asistente', label: 'Dely IA', icon: '▪', emoji: '🤖' },
+  { path: '/ofertas', label: 'Publicidad', icon: '▪', emoji: '📢' },
 ];
 
 const ADMIN_PASSWORD = 'Budin1183JKanime2';
@@ -267,6 +269,7 @@ export default function App() {
         <Route path="/categorias" element={<Layout><Categorias /></Layout>} />
         <Route path="/reportes" element={<Layout><Reportes /></Layout>} />
         <Route path="/asistente" element={<Layout><Asistente /></Layout>} />
+        <Route path="/ofertas" element={<Layout><Ofertas /></Layout>} />
       </Routes>
     </BrowserRouter>
   );
