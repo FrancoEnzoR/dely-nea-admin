@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const API = 'https://dely-nea-backend.onrender.com';
 const SUPABASE_URL = 'https://niipnuxwxrsxzvzucsis.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5paXBudXh3eHJzeHp2enVjc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4MzIzMjAsImV4cCI6MjA5MjQwODMyMH0.MW6aSOY0VKlqHUBtp5YGHP8QbYIo85JWeUxLbBarFlA'; // anon key
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5paXBudXh3eHJzeHp2enVjc2lzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjgzMjMyMCwiZXhwIjoyMDkyNDA4MzIwfQ.2gg50iofZLTKSML_hl-UrjNaQ12YmIkZBe0F4Nq948E'; // anon key
 
 const C = {
   base: '#07080F', card: '#0E1020', cardLight: '#151828',
