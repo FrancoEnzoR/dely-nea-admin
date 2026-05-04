@@ -6,7 +6,7 @@ import { CSS } from '@dnd-kit/utilities';
 
 const API = 'https://dely-nea-backend.onrender.com';
 const SUPABASE_URL = 'https://niipnuxwxrsxzvzucsis.supabase.co';
-
+const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5paXBudXh3eHJzeHp2enVjc2lzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjgzMjMyMCwiZXhwIjoyMDkyNDA4MzIwfQ.2gg50iofZLTKSML_hl-UrjNaQ12YmIkZBe0F4Nq948E';
 
 const C = {
   base: '#07080F', card: '#0E1020', cardLight: '#151828',
