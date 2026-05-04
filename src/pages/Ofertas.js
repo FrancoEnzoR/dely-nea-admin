@@ -6,7 +6,7 @@ import { CSS } from '@dnd-kit/utilities';
 
 const API = 'https://dely-nea-backend.onrender.com';
 const SUPABASE_URL = 'https://niipnuxwxrsxzvzucsis.supabase.co';
-const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5paXBudXh3eHJzeHp2enVjc2lzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjgzMjMyMCwiZXhwIjoyMDkyNDA4MzIwfQ.2gg50iofZLTKSML_hl-UrjNaQ12YmIkZBe0F4Nq948E';
+
 
 const C = {
   base: '#07080F', card: '#0E1020', cardLight: '#151828',
@@ -131,7 +131,7 @@ export default function Ofertas() {
     setSubiendo(true);
     try {
       const fileName = `oferta-${Date.now()}.${file.name.split('.').pop()}`;
-      const anonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || '';
+      const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5paXBudXh3eHJzeHp2enVjc2lzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjgzMjMyMCwiZXhwIjoyMDkyNDA4MzIwfQ.2gg50iofZLTKSML_hl-UrjNaQ12YmIkZBe0F4Nq948E';
       const res = await fetch(`${SUPABASE_URL}/storage/v1/object/ofertas/${fileName}`, {
         method: 'POST',
         headers: {
