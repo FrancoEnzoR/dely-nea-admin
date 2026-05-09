@@ -9,6 +9,7 @@ import Categorias from './pages/Categorias';
 import Reportes from './pages/Reportes';
 import Asistente from './pages/Asistente';
 import Ofertas from './pages/Ofertas';
+import Mensajes from './pages/Mensajes';
 
 const C = {
   base: '#07080F',
@@ -33,6 +34,7 @@ const menuItems = [
   { path: '/categorias', label: 'Categorias', emoji: '🏷️' },
   { path: '/reportes', label: 'Reportes', emoji: '💰' },
   { path: '/asistente', label: 'Dely IA', emoji: '🤖' },
+  { path: '/mensajes', label: 'Mensajes', emoji: '💬' },
   { path: '/ofertas', label: 'Publicidad', emoji: '📢' },
 ];
 
@@ -174,6 +176,7 @@ export default function App() {
         <Route path="/categorias" element={<Layout><Categorias /></Layout>} />
         <Route path="/reportes" element={<Layout><Reportes /></Layout>} />
         <Route path="/asistente" element={<Layout><Asistente /></Layout>} />
+        <Route path="/mensajes" element={<Layout><Mensajes /></Layout>} />
         <Route path="/ofertas" element={<Layout><Ofertas /></Layout>} />
       </Routes>
     </BrowserRouter>
