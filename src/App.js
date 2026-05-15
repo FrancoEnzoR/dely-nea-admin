@@ -34,8 +34,8 @@ const menuItems = [
   { path: '/categorias', label: 'Categorias', emoji: '🏷️' },
   { path: '/reportes', label: 'Reportes', emoji: '💰' },
   { path: '/asistente', label: 'Dely IA', emoji: '🤖' },
-  { path: '/mensajes', label: 'Mensajes', emoji: '💬' },
   { path: '/ofertas', label: 'Publicidad', emoji: '📢' },
+  { path: '/mensajes', label: 'Mensajes', emoji: '💬' },
 ];
 
 const ADMIN_PASSWORD = 'Budin1183JKanime2';
@@ -176,8 +176,8 @@ export default function App() {
         <Route path="/categorias" element={<Layout><Categorias /></Layout>} />
         <Route path="/reportes" element={<Layout><Reportes /></Layout>} />
         <Route path="/asistente" element={<Layout><Asistente /></Layout>} />
-        <Route path="/mensajes" element={<Layout><Mensajes /></Layout>} />
         <Route path="/ofertas" element={<Layout><Ofertas /></Layout>} />
+        <Route path="/mensajes" element={<Layout><Mensajes /></Layout>} />
       </Routes>
     </BrowserRouter>
   );
