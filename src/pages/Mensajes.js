@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react';
-
-const API = 'https://dely-nea-backend.onrender.com';
+import { useState } from 'react';
 
 const C = {
   base: '#07080F', card: '#0E1020', cardLight: '#151828',
@@ -100,17 +98,15 @@ export default function Mensajes() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 112px)' }}>
-      {/* Header */}
       <div style={{ marginBottom: 20 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, letterSpacing: '-0.5px' }}>
             Mensajes 💬
           </h1>
           {noLeidos > 0 && (
-            <div style={{
-              backgroundColor: C.error, borderRadius: 20,
-              padding: '2px 10px', fontSize: 12, fontWeight: 700, color: '#fff',
-            }}>{noLeidos} nuevo{noLeidos > 1 ? 's' : ''}</div>
+            <div style={{ backgroundColor: C.error, borderRadius: 20, padding: '2px 10px', fontSize: 12, fontWeight: 700, color: '#fff' }}>
+              {noLeidos} nuevo{noLeidos > 1 ? 's' : ''}
+            </div>
           )}
         </div>
         <p style={{ color: C.muted, marginTop: 4, fontSize: 13 }}>
@@ -121,13 +117,8 @@ export default function Mensajes() {
       <div style={{ display: 'flex', gap: 16, flex: 1, minHeight: 0 }}>
 
         {/* Lista de chats */}
-        <div style={{
-          width: 320, flexShrink: 0,
-          backgroundColor: C.card, borderRadius: 14,
-          border: `1px solid ${C.border}`,
-          display: 'flex', flexDirection: 'column', overflow: 'hidden',
-        }}>
-          {/* Filtros */}
+        <div style={{ width: 320, flexShrink: 0, backgroundColor: C.card, borderRadius: 14, border: `1px solid ${C.border}`, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+          
           <div style={{ padding: '12px 12px 8px', borderBottom: `1px solid ${C.border}`, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
             {[
               { key: 'todos', label: 'Todos' },
@@ -145,7 +136,6 @@ export default function Mensajes() {
             ))}
           </div>
 
-          {/* Lista */}
           <div style={{ flex: 1, overflowY: 'auto' }}>
             {chatsFiltrados.map(chat => (
               <div
@@ -162,8 +152,7 @@ export default function Mensajes() {
                   <div style={{
                     width: 40, height: 40, borderRadius: '50%', flexShrink: 0,
                     background: `linear-gradient(135deg, ${chat.tipo === 'soporte' ? C.error : C.violet}, ${C.cyan})`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 16,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16,
                   }}>
                     {chat.tipo === 'soporte' ? '🛡️' : '🏪'}
                   </div>
@@ -191,17 +180,10 @@ export default function Mensajes() {
         </div>
 
         {/* Panel de chat */}
-        <div style={{
-          flex: 1, backgroundColor: C.card, borderRadius: 14,
-          border: `1px solid ${C.border}`, display: 'flex', flexDirection: 'column', overflow: 'hidden',
-        }}>
+        <div style={{ flex: 1, backgroundColor: C.card, borderRadius: 14, border: `1px solid ${C.border}`, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           {chatActivo ? (
-            <>
-              {/* Header del chat */}
-              <div style={{
-                padding: '14px 20px', borderBottom: `1px solid ${C.border}`,
-                display: 'flex', alignItems: 'center', gap: 12,
-              }}>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <div style={{ padding: '14px 20px', borderBottom: `1px solid ${C.border}`, display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{
                   width: 40, height: 40, borderRadius: '50%',
                   background: `linear-gradient(135deg, ${chatActivo.tipo === 'soporte' ? C.error : C.violet}, ${C.cyan})`,
@@ -217,25 +199,15 @@ export default function Mensajes() {
                       : `Comercio · ${chatActivo.email}`}
                   </div>
                 </div>
-                {chatActivo.tipo === 'soporte' && (
-                  <div style={{ display: 'flex', gap: 8 }}>
-                    
-                      href={`mailto:${chatActivo.email}`}
-                      style={{
-                        backgroundColor: `${C.cyan}18`, color: C.cyan,
-                        border: `1px solid ${C.cyan}44`, borderRadius: 8,
-                        padding: '6px 12px', fontSize: 11, fontWeight: 700,
-                        textDecoration: 'none',
-                      }}
-                    >✉️ Email</a>
-                  </div>
-                )}
+                <a href={`mailto:${chatActivo.email}`} style={{
+                  backgroundColor: `${C.cyan}18`, color: C.cyan,
+                  border: `1px solid ${C.cyan}44`, borderRadius: 8,
+                  padding: '6px 12px', fontSize: 11, fontWeight: 700, textDecoration: 'none',
+                }}>✉️ Email</a>
               </div>
 
-              {/* Mensajes */}
               <div style={{ flex: 1, overflowY: 'auto', padding: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {chatActivo.mensajes.map(m => {
-                  const esAdmin = m.emisor_tipo === 'admin' || m.emisor_tipo === 'soporte';
                   const esPropio = m.emisor_tipo === 'admin';
                   return (
                     <div key={m.id} style={{ display: 'flex', justifyContent: esPropio ? 'flex-end' : 'flex-start', gap: 8 }}>
@@ -267,7 +239,6 @@ export default function Mensajes() {
                 })}
               </div>
 
-              {/* Input */}
               <div style={{ padding: '12px 16px', borderTop: `1px solid ${C.border}`, display: 'flex', gap: 10 }}>
                 <input
                   value={input}
@@ -286,7 +257,7 @@ export default function Mensajes() {
                   padding: '10px 20px', fontSize: 13, fontWeight: 700, cursor: 'pointer',
                 }}>Enviar →</button>
               </div>
-            </>
+            </div>
           ) : (
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
               <div style={{ fontSize: 48 }}>💬</div>
